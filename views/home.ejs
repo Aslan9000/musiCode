@@ -41,9 +41,10 @@
   <div class="container col-6 mb-5 mt-3">
     <div id="mainMC" class="row">
       <h3>Hear your name as a musical piece</h3>
-      <form action="#" id="convertForm">
-        <label for="nameMC">Enter your name: </label>
-        <input type="text" id="musicifyInField" name="nameMC" class="form-control my-2">
+      <form id="convertForm">
+        <div id="nameError" class="alert alert-danger small invalid-feedback"></div>
+        <input type="text" id="musicifyInField" name="nameMC" class="form-control my-2" placeholder="Enter a name" required>
+        
           <div class="input-group mb-3">
             <select class="form-select form-select-indicator-purple" id="middleCSelect">
               <option selected>C4</option>
