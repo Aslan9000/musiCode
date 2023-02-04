@@ -38,12 +38,70 @@
   </div>
   <!-- Modal End -->
 
-  <div class="container col-6 my-5">
+  <div class="container col-6 mb-5 mt-3">
     <div id="mainMC" class="row">
       <h3>Hear your name as a musical piece</h3>
       <form action="#" id="convertForm">
         <label for="nameMC">Enter your name: </label>
         <input type="text" id="musicifyInField" name="nameMC" class="form-control my-2">
+          <div class="input-group mb-3">
+            <select class="form-select form-select-indicator-purple" id="middleCSelect">
+              <option selected>C4</option>
+              <option value="1">C3</option>
+            </select>
+            <label class="input-group-text" for="middleCSelect">Middle C</label>
+          </div>
+          <div class="input-group mb-3" id="keyGrouping">
+            <select class="form-select" id="keySelect">
+              <option selected>C</option>
+              <option value="1">C#/Db</option>
+              <option value="2">D</option>
+              <option value="3">D#/Eb</option>
+              <option value="4">E</option>
+              <option value="5">F</option>
+              <option value="6">F#/Gb</option>
+              <option value="7">G</option>
+              <option value="8">G#/Ab</option>
+              <option value="9">A</option>
+              <option value="10">A#/Bb</option>
+              <option value="11">B</option>
+            </select>
+            <label class="input-group-text" for="keySelect">Key</label>
+          </div>
+
+          <div class="input-group mb-3 d-none" id="keySelectWTGrouping">
+            <select class="form-select" id="keySelectWT">
+              <option selected>C</option>
+              <option value="1">C#/Db</option>
+            </select>
+            <label class="input-group-text" for="keySelectWT">Key</label>
+          </div>
+  
+          <div class="input-group mb-3" id="scaleGrouping">
+            <select class="form-select" id="scaleSelect">
+              <option selected>Major</option>
+              <option value="2">Minor</option>
+              <option value="3">Major Pentatonic</option>
+              <option value="4">Minor Pentatonic</option>
+              <option value="5">Chromatic</option>
+              <option value="6">Whole-Tone</option>
+            </select>
+            <label class="input-group-text" for="scaleSelect">Scale</label>
+          </div>
+
+          <div class="input-group mb-3 d-none" id="modeGrouping">
+            <select class="form-select" id="modeSelect">
+              <option selected>Ionian</option>
+              <option value="2">Dorian</option>
+              <option value="3">Phrygian</option>
+              <option value="4">Lydian</option>
+              <option value="5">Mixolydian</option>
+              <option value="6">Aeolian</option>
+              <option value="7">Locrian</option>
+            </select>
+            <label class="input-group-text" for="modeSelect">Mode</label>
+          </div>
+
         <input type="hidden" name="_csrf" value="<%= csrfToken %>">
         <button type="submit" class="btn btn-success my-2">Transmusicify!</button>
       </form>
@@ -53,7 +111,7 @@
           <h4 class="card-text">Test</h4>
           <h4 class="card-text">Test</h4>
       </div>
-      <div class="card-footer">
+      <div class="card-footer ">
         <div id="player-footer" class="container d-flex align-items-center">
           <div id="playBtn" class="me-1"><i id="playBtn" class="fa-solid fa-play"></i></div>
           <div id="pauseBtn" class="me-3"><i class="fa-solid fa-pause"></i></div>
