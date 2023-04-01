@@ -1,5 +1,8 @@
-const path = require('path')
-const webpack = require('webpack')
+const path = require('path');
+const webpack = require('webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const devMode = process.env.npm_lifecycle_event !== "build";
 
 module.exports = {
   entry: './frontend/main.js',
@@ -7,7 +10,7 @@ module.exports = {
     filename: 'main-bundled.js',
     path: path.resolve(__dirname, 'public')
   },
-  mode: "production",
+  mode: devMode ? "development" : "production",
   module: {
     rules: [
       {
@@ -19,7 +22,35 @@ module.exports = {
             presets: ['@babel/preset-env']
           }
         }
+      },
+      {
+        test: /\.(scss|css)$/,
+        use: [{
+          // inject CSS to page
+          loader: devMode ? "style-loader" : MiniCssExtractPlugin.loader
+        }, {
+          // translates CSS into CommonJS modules
+          loader: 'css-loader'
+        }, {
+          // Run postcss actions
+          loader: 'postcss-loader',
+          options: {
+            postcssOptions: {
+              plugins: function () {
+                return [
+                  require('autoprefixer')
+                ];
+              }
+            }
+          }
+        }, {
+          // compiles Sass to CSS
+          loader: 'sass-loader'
+        }],
       }
     ]
-  }
+  },
+  plugins: devMode ? [] : [new MiniCssExtractPlugin()],
+  optimization: devMode ? {} : {minimizer: [`...`, new CssMinimizerPlugin(),
+  ]},
 }

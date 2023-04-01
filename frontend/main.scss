@@ -1,0 +1,155 @@
+// Include any default variable overrides here (though functions won't be available)
+
+$input-group-addon-color:#fff;
+$input-group-addon-bg: #83079e;
+
+
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Then add additional custom code here
+
+#mainContainer {
+    margin-top: 15px;
+
+    @media (max-width: 992px){
+        margin-top: 10px;
+    }
+}
+
+#mainMC h3 {
+    @media (max-width: 992px){
+        font-size: 1.5em;
+    }
+
+    @media (max-width: 768px){
+        font-size: 1.4em;
+    }
+
+    @media (max-width: 576px){
+        font-size: 1.3em;
+    }
+}
+
+#card {
+    height: 200px;
+
+    @media (max-width: 992px){
+        height: 180px;
+    }
+
+    @media (max-width: 768px){
+        height: 160px;
+    }
+
+    @media (max-width: 576px){
+        height: 140px;
+    }
+
+   
+}
+
+#transBtn {
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #000;
+    border-radius: 13px;
+    padding: .8em;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.aniword{
+    position: relative;
+
+    & h4 {
+    color: #fff;
+    font-size: 8em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+
+    @media (max-width: 992px){
+        & h4 {
+            font-size: 6em;
+        }
+    }
+
+    @media (max-width: 768px){
+        & h4 {
+            font-size: 5em;
+        }
+    }
+
+    @media (max-width: 576px){
+        & h4 {
+            font-size: 4em;
+        }
+    }
+
+    & h4:nth-child(1) {
+    color: transparent;
+    -webkit-text-stroke: 2px #83079e;
+    }
+
+    & h4:nth-child(2) {
+    color: #83079e;
+    animation: animate 4s ease-in-out infinite;
+    }
+} 
+
+@keyframes animate {
+    0%,
+    100% {
+        clip-path: polygon(
+        0% 45%,
+        16% 44%,
+        33% 50%,
+        54% 60%,
+        70% 61%,
+        84% 59%,
+        100% 52%,
+        100% 100%,
+        0% 100%
+        );
+    }
+
+    50% {
+        clip-path: polygon(
+        0% 60%,
+        15% 65%,
+        34% 66%,
+        51% 62%,
+        67% 50%,
+        84% 45%,
+        100% 46%,
+        100% 100%,
+        0% 100%
+        );
+    }
+}
+
+#footer {
+    font-size: 1em;
+
+    @media (max-width: 576px){
+        font-size: .8em;
+    }
+
+    @media (max-width: 382px){
+        font-size: .7em;
+    }
+}
+
+.profileContain {
+    max-width: 600px;
+    border: 1px solid red;
+}
+
+.userProfile {
+    width: 50px;
+    height: 50px;
+    border-radius: 16px;
+}

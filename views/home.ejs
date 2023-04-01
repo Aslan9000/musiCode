@@ -38,9 +38,9 @@
   </div>
   <!-- Modal End -->
 
-  <div class="container col-6 mb-5 mt-3">
+  <div id="mainContainer" class="container col-lg-6  col-md-7 col-sm-8">
     <div id="mainMC" class="row">
-      <h3>Hear your name as a musical piece</h3>
+      <h3 class="text-center">Hear your name as a musical piece</h3>
       <form id="convertForm">
         <div id="nameError" class="alert alert-danger small invalid-feedback"></div>
         <input type="text" id="musicifyInField" name="nameMC" class="form-control my-2" placeholder="Enter a name" required>
@@ -104,13 +104,15 @@
           </div>
 
         <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-        <button type="submit" class="btn btn-success my-2">Transmusicify!</button>
+        <div class="d-flex justify-content-center align-items-center">
+          <button type="submit" id="transBtn" class="btn btn-success my-2">Transmusicify!</button>
+        </div>
       </form>
     </div>
-    <div class="card" style="height: 200px;">
+    <div id="card" class="card">
       <div class="aniword card-body">
-          <h4 class="card-text">Test</h4>
-          <h4 class="card-text">Test</h4>
+          <h4 class="card-text">Name</h4>
+          <h4 class="card-text">Name</h4>
       </div>
       <div class="card-footer ">
         <div id="player-footer" class="container d-flex align-items-center">
