@@ -106,7 +106,7 @@ export default class PlayerMid{
 			if(Player != undefined){Player.stop()};
 			Player = new MidiPlayer.Player(function(event){
 				if(event.name == 'Note on' && event.velocity > 0){
-					piano.play(event.noteName, ac.currentTime, {gain:event.velocity/100});
+					piano.play(event.noteName, ac.currentTime, {gain:event.velocity/100 * 2.5});
 				}
 				document.querySelector('#progressBar').style.width = 100 - Player.getSongPercentRemaining() +'%' ;
 					
