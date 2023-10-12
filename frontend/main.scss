@@ -11,7 +11,7 @@ $input-group-addon-bg: #83079e;
 
 #mainContainer {
     margin-top: 15px;
-
+    padding-bottom: 15vh;
     @media (max-width: 992px){
         margin-top: 10px;
     }
@@ -133,7 +133,6 @@ $input-group-addon-bg: #83079e;
 
 #footer {
     font-size: 1em;
-
     @media (max-width: 576px){
         font-size: .8em;
     }
