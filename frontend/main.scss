@@ -142,9 +142,26 @@ $input-group-addon-bg: #83079e;
     }
 }
 
+.dashName{
+    text-transform: capitalize;
+}
+
+.newFeature{
+    color: #83079e;
+    font-style:oblique;
+}
+
+.profileName {
+    color: #fff;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
 .profileContain {
     max-width: 600px;
-    border: 1px solid red;
+    height: 15vh;
+    border-radius: 18px;
+    background-color: #ce8add;
 }
 
 .userProfile {

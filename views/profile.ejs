@@ -3,13 +3,15 @@
 <div class="container">
 	<%- include('partials/flash') %>
 
-	<div class="profileContain container-flex">
-		<img  class="userProfile" src="/images/user-solid.svg" alt="blank user profile pic">
+	<div class="profileContain container-flex my-5 d-flex align-items-center">
+		
+		<img  class="userProfile p-2" src="/images/user-solid.svg" alt="blank user profile pic">
 		<form action="/createAvatar" enctype="multipart/form-data" method="POST" id="uploadAvForm">
-			Select Profile Avatar: <input type="file" name="myAvatar" accept="image/*" />
+			<h4>Select Profile Avatar:</h4> <input type="file" name="myAvatar" accept="image/*" />
 			<input type="hidden" name="_csrf" value="<%= csrfToken %>">
-			<input id="uploadPhotoBtn" class="btn btn-outline-danger" type="submit" value="Upload Photo" />
+			<input id="uploadPhotoBtn" class="btn btn-secondary" type="submit" value="Upload Photo" />
 		</form>
+		
 	</div>
 
     

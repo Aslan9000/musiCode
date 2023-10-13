@@ -17,7 +17,7 @@
 
       <% if(user && user.avatar){ %>
         <div class="flex-row my-3 my-md-0">
-          
+          <h5 class="profileName d-inline px-2"><%= user.username %></h5>
           <a href="/profile">
             <img id="previewAvatar" class="avatar-tiny" style="width: 32px; height: 32px; border-radius: 16px;" src="data:<%= contentType %>;base64, <%= image %>" alt="avatar preview">
           </a>
@@ -29,7 +29,10 @@
         </div>
       <% }else if(user){ %>
         <div class="flex-row my-3 my-md-0">
-          <img id="previewAvatar" class="avatar-tiny" style="width: 32px; height: 32px; border-radius: 16px;" src="../../images/Sunflower.jpeg" alt="avatar preview">
+          <p class="profileName d-inline px-2"><%= user.username %></p>
+          <a href="/profile">
+            <img id="previewAvatar" class="avatar-tiny" style="width: 32px; height: 32px; border-radius: 16px;" src="../../images/Sunflower.jpeg" alt="avatar preview">
+          </a>
           <form action="/logout" method="POST" class="d-inline">
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             <button class="btn btn-primary" type="submit">Logout</button>
